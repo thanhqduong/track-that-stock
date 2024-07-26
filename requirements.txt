@@ -1,0 +1,10 @@
+pandas
+pmdarima
+scikit-learn
+numpy
+tensorflow
+streamlit
+streamlit-option-menu
+plotly
+matplotlib
+mysql-connector-python
