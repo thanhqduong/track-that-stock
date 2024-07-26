@@ -23,7 +23,7 @@ from mysql.connector import Error
 
 # --- Page Configuration ---
 st.set_page_config(
-    page_title="S&P Tracker",
+    page_title="Track That Stock",
     page_icon=":chart_with_upwards_trend:",
     layout="wide"
 )
@@ -848,7 +848,7 @@ def add_line_graph(fig, name, data, data_index):
 
 # --- Navigation Menu ---
 selected = option_menu(
-    menu_title="S&P Tracker",
+    menu_title="All-In-One S&P 500 Stock Tracker",
     options=["Dashboard", "Indicators", "Forecasting", "Stat Arb", "Options Pricing", "Notes"],
     orientation="horizontal",
     styles={
