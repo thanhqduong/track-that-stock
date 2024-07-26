@@ -689,18 +689,6 @@ def lstm_model(timeseries, predict_num, look_back=7, lstm_units=25, epochs=20):
 
 
 
-
-# --- Sample Data (Replace with your actual data) ---
-# date_today = datetime.today() - timedelta(365*3)
-# days = pd.date_range(date_today, date_today + timedelta(365*3 - 1), freq='D')
-# np.random.seed(1)
-# df = pd.DataFrame({'Date': days})
-# df.set_index('Date', inplace=True)
-# df['A'] = 100 + np.cumsum(np.random.randn(len(days)))
-# df['AAPL'] = 150 + np.cumsum(np.random.randn(len(days)))
-# df['AAP'] = 200 + np.cumsum(np.random.randn(len(days)))
-
-
 # --- Initialize session state for selected tickers ---
 if 'selected_tickers' not in st.session_state:
     st.session_state['selected_tickers'] = []
@@ -714,10 +702,10 @@ def create_connection():
     """Create a connection to the MySQL database."""
     try:
         connection = mysql.connector.connect(
-            host='aws-screener.cn422y4ww81v.ap-southeast-2.rds.amazonaws.com',
-            user='admin',
-            password='Matkhauaws100402',
-            database="aws_screener"
+            host=st.secrets["aws_host"],
+            user=st.secrets["aws_user"],
+            password=st.secrets["aws_password"],
+            database=st.secrets["aws_db"]
         )
         if connection.is_connected():
             print('Successful')
