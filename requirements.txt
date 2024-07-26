@@ -1,6 +1,6 @@
 pandas
-numpy
-pmdarima
+numpy==1.24.3
+pmdarima==2.0.3
 Cython
 scikit-learn
 tensorflow
